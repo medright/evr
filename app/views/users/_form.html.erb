@@ -1,0 +1,32 @@
+<ul class="form_ul">
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this med from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <li>
+    <%= f.label :email, 'email' %><br/>
+    <%= f.text_field :email, autofocus: true,  id: 'text_field', type: 'text', input: "webkit-speech" %>
+  </li>
+  <li>
+    <%= f.label :encrypted_password%>
+    <%= f.text_field :encrypted_password%>
+  </li>
+  <li>
+    <%= f.label :approved %><br/>
+    <%= f.check_box :approved %>
+  </li>
+  <li >
+    <%= f.submit class: 'btn' %>
+  </li>
+<% end %>
+</ul>

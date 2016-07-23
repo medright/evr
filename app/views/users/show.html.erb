@@ -1,0 +1,24 @@
+<div class="index">
+<nav>
+  <%= link_to("all users", users_path) %>
+</nav>
+
+<article>
+  <header>
+    <h2 id="h3"><%= @user.email %> | <%= @user.created_at.to_s(:long) %></h2>
+  </header>
+  <h3>email:</h3>
+  <p>
+    <%= @user.email %>
+  </p>
+  <h3>approved:</h3>
+  <p>
+    <%= @user.approved %>
+  </p>
+  <h3>id:</h3>
+  <p>
+    <%= @user.id %>
+  </p>
+
+</article>
+</div>
